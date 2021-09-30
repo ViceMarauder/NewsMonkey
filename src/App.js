@@ -18,7 +18,6 @@ export default class App extends Component {
       <div>
         <Router>
         <NavBar/>
-        <News pageSize="20" country="in" category="general"/>
         <Switch>
           <Route exact path="/"><News key="home" pageSize="20" country="in" category="general"/></Route>
           <Route exact path="/business"><News key="business" pageSize="20" country="in" category="business"/></Route>
