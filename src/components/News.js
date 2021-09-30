@@ -38,8 +38,6 @@ export class News extends Component {
         if(this.state.page+1 > Math.ceil(this.state.totalResults/this.props.pageSize)){
         }
         else{
-            console.log(this.state.page)
-            console.log("next")
             let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=1f3e3a900b544bc3991603889aa68124&pageSize=${this.props.pageSize}&page=${this.state.page+1}`
             this.setState({loading: true})
             let data = await fetch(url)
