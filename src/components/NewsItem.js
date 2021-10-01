@@ -10,7 +10,7 @@ export class NewsItem extends Component {
           <img
             src={
               !imageUrl
-                ? "https://images.indianexpress.com/2021/09/horoscope-5-1.jpeg"
+                ? "https://www.borouge.com/MediaCentre/Images1/News-Website-banner-V1.JPG"
                 : imageUrl
             }
             className="card-img-top"
