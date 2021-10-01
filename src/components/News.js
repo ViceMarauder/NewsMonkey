@@ -31,15 +31,19 @@ export class News extends Component {
     )} - NewsMonkey`;
   }
   async updateNews() {
+    this.props.setProgress(10)
     const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=1f3e3a900b544bc3991603889aa68124&pageSize=${this.props.pageSize}&page=${this.state.page}`;
     this.setState({ loading: true });
     let data = await fetch(url);
+    this.props.setProgress(30)
     let parsedData = await data.json();
+    this.props.setProgress(70)
     this.setState({
       article: parsedData.articles,
       totalResults: parsedData.totalResults,
       loading: false,
     });
+    this.props.setProgress(100)
   }
   async componentDidMount() {
     this.updateNews();
